@@ -1,0 +1,27 @@
+<h3><a class="btn btn-secondary" href="/details"><i class="fa fa-plus"></i> Create New</a> details List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>User Name</th>
+            <th>Address</th>
+        
+            <th></th>
+        </tr>
+    </thead>
+  
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.ID}}</td>
+            <td>{{this.userName}}</td>
+            <td>{{this.address}}</td>
+       
+            <td>
+               <a href="/details/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i>Update</a>
+               <a href="/details/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i>Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

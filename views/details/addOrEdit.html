@@ -1,0 +1,66 @@
+
+<h3>{{viewTitle}}</h3>
+<form action="/details" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{details._id}}">
+
+
+    <div class="form-group col-md-6">
+        <label>ID</label>
+        <input type="number" class="form-control" name="ID"  value="{{details.ID}}">
+    </div>
+
+    
+    <div class="form-group col-md-6">
+        <label>User Name</label>
+        <input type="text" class="form-control" name="userName"  value="{{details.userName}}">
+        <div class="text-danger">
+            {{details.userNameError}}</div>
+    </div>
+    
+   
+        <div class="form-group col-md-6">
+            <label>Address</label>
+            <input type="text" class="form-control" name="address"  value="{{details.address}}">
+        </div>
+
+
+     <div class="form-group">
+        <button type="submit" class="btn btn-info"> Add</button>
+        <a class="btn btn-secondary" href="/details/list"> View All</a>
+    </div>
+
+
+   
+    <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User Name</th>
+                    <th>Address</th>
+                    <th></th>
+                
+                   
+                </tr>
+            </thead>
+          
+            <tbody>
+               
+                <tr>
+                    <td>{{details.ID}}</td>
+                    <td>jhon carton</td>
+                    <td>banglore</td>
+               
+                    <td>
+                       <a href="/details/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i>Update</a>
+                       <a href="/details/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i>Delete</a>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    
+</form>
+
+
+
+
